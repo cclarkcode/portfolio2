@@ -43,13 +43,11 @@ body {
 .mainpage {
 	font-size: 20px;
 	width: 70%;	
-	margin-bottom: 15px;
+	margin: 15px;
 	font-weight: bolder;
 }
 
-.mainpage-right {
-	float: right;
-}
+
 
 .below {
 	background: black;
@@ -59,7 +57,14 @@ body {
 	font-weight: normal;
 }
 
+.mainpage-right {
+	float: right;
+	margin-bottom: 10px;
+}
 
+.mainpage-right p {
+	margin: 0;
+}
 
 .body-head {
 
@@ -98,12 +103,28 @@ body {
 	width: 50px;
 	height: auto;
 	float: left;
+	transition: all .2s ease-in-out;
+	display: 'inline-block';
+	margin: 30px;
 
 }
 
 .connect-image:hover {
 
 	opacity: .5;
+	transform: scale(1.5);
+}
+
+.connect {
+	
+
+	text-align: center;
+}
+
+.connect-inner {
+	margin: 0 auto;
+	width: 39%;
+	
 }
 
 
@@ -158,6 +179,7 @@ body {
 	padding: 10px;
 	color: yellow;
 	display: inline-block;
+	height: 25vh;
 	
 	
 	
@@ -165,7 +187,7 @@ body {
 .quadrant img {
 	
 	width: 100%;
-	height: auto;
+	height: 100%;
 	
 
 }
@@ -174,6 +196,36 @@ body {
 	position: relative;
 	
 }
+
+.contact-list {
+	list-style-type: none;
+	overflow: hidden;
+	text-align: center;
+
+}
+
+.contact-link {
+	margin: 0 30px;
+	font-size: 30px;
+	display: 'inline';
+}
+
+.contact-link a {
+	color: inherit;
+}
+
+.contact-link + .tooltip > .tooltip-inner {
+	background-color: white; 
+	color: black; 
+	border: 1px solid white; 
+	padding: 15px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+
+
 
 
 

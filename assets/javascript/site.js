@@ -28,8 +28,9 @@ function handleMouse()  {
     placeholder.insertAfter($(this));
 
     $(this).animate({
-        width: '90%'
-    },'slow');
+        width: '100%',
+        height: '50vh'
+    },'fast');
     
 }
 
@@ -39,8 +40,9 @@ function handleExit() {
 
     $(this).animate({
         width: '49.5%',
+        height: '25vh'
         
-    },'slow', function () {
+    },'fast', function () {
         $(this).css({
             'z-index': '1',
             position: 'static',
@@ -53,4 +55,8 @@ function handleExit() {
 
     });
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
 
