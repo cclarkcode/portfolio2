@@ -30,14 +30,30 @@ function handleMouse()  {
     $(this).animate({
         width: '100%',
         height: '50vh'
-    },'fast');
+    },'fast', function () {
+        
+        $(this).find('.overlay-description').css({
+            display: 'block'
+        })
+    });
+   
+    $(this).find('.overlay-title').animate({
+         'font-size': '30px'
+        },'fast');
     
 }
 
 function handleExit() {
     const attributes = $(this).attr('data-id').split('-');
     $($(this)).off('mouseleave');
+    $(this).find('.overlay-title').animate({
+        'font-size': '20px'
+    },'fast');
 
+    $(this).find('.overlay-description').css({
+        display: 'none'
+    });
+    
     $(this).animate({
         width: '49.5%',
         height: '25vh'
@@ -45,10 +61,15 @@ function handleExit() {
     },'fast', function () {
         $(this).css({
             'z-index': '1',
-            position: 'static',
-            [attributes[0]]: 'unset',
-            [attributes[1]]: 'unset'
+            position: 'relative',
+            
         });
+
+        //duplicate command to handle specific bug
+        $(this).find('.overlay-description').css({
+            display: 'none'
+        });
+        
         $('#placeholder' + placeholdercount).remove();
         placeholdercount++;
         $('.quadrant').on('mouseover', handleMouse)
